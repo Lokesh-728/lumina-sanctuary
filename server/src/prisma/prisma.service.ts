@@ -9,6 +9,9 @@ export class PrismaService
 {
   constructor(config: ConfigService) {
     const url = config.get<string>('DATABASE_URL') || process.env.DATABASE_URL;
+    if (url) {
+      process.env.DATABASE_URL = url;
+    }
     super({
       ...(url
         ? {
