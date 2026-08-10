@@ -30,6 +30,14 @@ export class PrismaService
   }
 
   async onModuleInit() {
+    if (!process.env.DATABASE_URL) {
+      console.error(
+        '❌ DEPLOYMENT ERROR: DATABASE_URL is missing in Render Environment Variables!',
+      );
+      console.error(
+        'Please go to Render Dashboard -> Environment -> Add Environment Variable Key: DATABASE_URL with your MongoDB Atlas string.',
+      );
+    }
     await this.$connect();
   }
 
