@@ -1,0 +1,18 @@
+| Category            | Recommendation              |
+| ------------------- | --------------------------- |
+| Framework           | Next.js 15                  |
+| Language            | TypeScript                  |
+| Styling             | Tailwind CSS v4             |
+| UI                  | shadcn/ui                   |
+| Animations          | Framer Motion               |
+| Advanced Animations | GSAP (only where needed)    |
+| Icons               | Lucide React                |
+| Forms               | React Hook Form + Zod       |
+| State               | Zustand                     |
+| Backend             | Supabase                    |
+| Charts              | Recharts                    |
+| AI                  | OpenAI API                  |
+| Deployment          | Vercel                      |
+| Analytics           | PostHog or Vercel Analytics |
+
+

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #F9F8F5;
+    --foreground: #1b1c1c;
+    --primary: #47624d;
+    --secondary: #745b25;
+    --muted: #615b51;
+    --border: #e4e2e1;
+    --gold: #DBC49A;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Custom Glassmorphism Nav */
+.glass-nav {
+  background-color: rgba(249, 248, 245, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(228, 226, 225, 0.7);
+}
+
+/* Custom Soft Ambient Shadow System */
+.shadow-ambient {
+  box-shadow: 0 10px 30px -5px rgba(45, 45, 45, 0.04), 0 4px 12px -2px rgba(45, 45, 45, 0.02);
+}
+
+.shadow-ambient-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shadow-ambient-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -6px rgba(45, 45, 45, 0.08), 0 8px 20px -4px rgba(45, 45, 45, 0.04);
+}
+
+/* Custom Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -1,0 +1,521 @@
+---
+
+# Database
+
+## PostgreSQL
+
+I wouldn't choose MongoDB for this project.
+
+Manifestation apps have structured relationships:
+
+* Users
+* Journal Entries
+* Daily Habits
+* Habit History
+* Goals
+* Techniques
+* Notifications
+* AI Chats
+* Vision Boards
+
+Those are relational.
+
+Postgres excels here.
+
+---
+
+# ORM
+
+Prisma
+
+Reasons
+
+* Type-safe
+* Easy migrations
+* Great developer experience
+* Excellent autocomplete
+* Widely adopted
+
+Example
+
+```typescript
+await prisma.user.findUnique({
+    where: { id }
+})
+```
+
+---
+
+# Authentication
+
+Use JWT.
+
+Flow
+
+```text
+Login
+
+↓
+
+Access Token (15 min)
+
+↓
+
+Refresh Token (7–30 days)
+
+↓
+
+Renew automatically
+```
+
+Never store passwords yourself—store only securely hashed passwords (e.g. Argon2).
+
+---
+
+# Cache
+
+Redis
+
+Use Redis for
+
+* Sessions
+* Rate limiting
+* OTP storage
+* AI response caching
+* Frequently accessed data
+* Streak calculations
+
+Without Redis
+
+Everything hits the database.
+
+---
+
+# Queue System
+
+BullMQ
+
+For background jobs
+
+Examples
+
+* Daily reminders
+* Email sending
+* AI processing
+* Weekly reports
+* Push notifications
+* Journal analysis
+
+Never do these inside the API request.
+
+Queue them.
+
+---
+
+# File Storage
+
+Don't store images inside PostgreSQL.
+
+Use
+
+* Amazon S3
+* Cloudflare R2
+* Supabase Storage
+
+Store only URLs in the database.
+
+---
+
+# Email
+
+Resend is a great modern choice.
+
+You'll need
+
+* Welcome Email
+* OTP
+* Password Reset
+* Weekly Summary
+* Daily Reminder
+
+---
+
+# Notifications
+
+Later
+
+Firebase Cloud Messaging
+
+For
+
+Daily reminders
+
+Habit reminders
+
+Morning affirmations
+
+---
+
+# Logging
+
+Never use
+
+```javascript
+console.log()
+```
+
+in production.
+
+Use
+
+Pino
+
+or
+
+Winston
+
+Logs should include
+
+* User
+* Endpoint
+* Response Time
+* Errors
+* IP
+* Request ID
+
+---
+
+# Environment Variables
+
+Never hardcode
+
+```text
+API_KEY
+
+DATABASE_URL
+
+JWT_SECRET
+
+OPENAI_KEY
+```
+
+Always use
+
+```env
+.env
+```
+
+---
+
+# Security Checklist
+
+## Passwords
+
+Use
+
+Argon2
+
+Never
+
+SHA256
+
+Never
+
+MD5
+
+---
+
+## Validation
+
+Validate
+
+Every request.
+
+NestJS + class-validator makes this straightforward.
+
+Never trust frontend data.
+
+---
+
+## SQL Injection
+
+Use Prisma.
+
+Never
+
+```sql
+SELECT * FROM users WHERE email='${email}'
+```
+
+---
+
+## XSS
+
+Sanitize
+
+* Journal entries
+* Notes
+* Comments
+* AI prompts (where displayed)
+
+---
+
+## Rate Limiting
+
+Prevent
+
+```text
+Login
+
+10000 attempts
+```
+
+Use Redis-based rate limiting.
+
+---
+
+## CORS
+
+Allow
+
+Only
+
+```text
+https://yourdomain.com
+```
+
+Not
+
+```text
+*
+```
+
+---
+
+## Helmet
+
+Always use
+
+Helmet
+
+Security headers
+
+Already solves many common attacks.
+
+---
+
+## HTTPS
+
+Always.
+
+No exceptions.
+
+---
+
+## CSRF
+
+If using cookies
+
+Protect against CSRF.
+
+If using Authorization headers with JWT, the approach differs, but understand the trade-offs.
+
+---
+
+# Folder Structure
+
+```text
+src/
+
+ modules/
+
+     auth/
+
+     users/
+
+     journal/
+
+     habits/
+
+     techniques/
+
+     ai/
+
+     notification/
+
+ common/
+
+ config/
+
+ prisma/
+
+ utils/
+
+ middleware/
+
+ guards/
+
+ interceptors/
+
+ filters/
+```
+
+Every feature becomes its own module.
+
+Very clean.
+
+---
+
+# Database Tables
+
+```text
+users
+
+profiles
+
+goals
+
+daily_tasks
+
+task_completion
+
+journal_entries
+
+vision_boards
+
+affirmations
+
+manifestation_techniques
+
+user_progress
+
+notifications
+
+sessions
+
+ai_chat
+
+streaks
+```
+
+Normalize your schema to avoid duplicated data.
+
+---
+
+# API Design
+
+Use REST unless you have a strong reason for GraphQL.
+
+Example
+
+```text
+POST
+
+/api/auth/login
+
+GET
+
+/api/user
+
+POST
+
+/api/journal
+
+GET
+
+/api/dashboard
+
+POST
+
+/api/tasks/check
+
+GET
+
+/api/streak
+```
+
+REST is easier for this project.
+
+---
+
+# Monitoring
+
+Use
+
+Sentry
+
+You'll thank yourself later.
+
+Crash?
+
+Instant notification.
+
+---
+
+# Testing
+
+Write
+
+* Unit Tests
+* Integration Tests
+
+At least for
+
+* Auth
+* Payments (if added)
+* Journal
+* AI
+* Daily Tasks
+
+---
+
+# Future Features
+
+Your backend should be designed so these can be added without major rewrites:
+
+* AI Coach
+* Voice Journal
+* Daily Affirmation Generator
+* Vision Board AI
+* Community
+* Paid Membership
+* Push Notifications
+* Mobile App
+* Wearable integrations
+* Analytics Dashboard
+
+---
+
+# Infrastructure
+
+Eventually
+
+```text
+Vercel
+
+↓
+
+API
+
+↓
+
+Render / Railway / Fly.io / AWS ECS
+
+↓
+
+PostgreSQL
+
+↓
+
+Redis
+
+↓
+
+Storage
+
+↓
+
+CDN
+```
+
+---

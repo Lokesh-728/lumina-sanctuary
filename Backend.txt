@@ -1,0 +1,30 @@
+# Architecture Principles to Follow
+
+1. **Keep business logic out of controllers.** Controllers should only receive requests and return responses. Put logic in services.
+2. **Separate authentication and authorization.** Logging in is different from checking permissions.
+3. **Use database transactions** for operations that update multiple tables together (for example, completing a task and updating a streak).
+4. **Version your API** from day one (`/api/v1/...`) so future changes don't break existing clients.
+5. **Use UUIDs or CUIDs** for public IDs instead of exposing sequential integers.
+6. **Never trust the client.** Validate every input, even if your frontend already validates it.
+7. **Design for idempotency** where appropriate (e.g., marking a task complete twice shouldn't create duplicate records).
+8. **Keep secrets and configuration out of code** using environment variables and a proper secrets management process for production.
+9. **Back up your database automatically** and test restoring those backups.
+10. **Add observability early**—structured logs, metrics, and error tracking make production issues much easier to diagnose.
+
+## The stack I'd choose
+
+| Layer           | Recommendation                                                                        |
+| --------------- | ------------------------------------------------------------------------------------- |
+| Frontend        | Next.js + TypeScript + Tailwind CSS                                                   |
+| Backend         | **NestJS + TypeScript**                                                               |
+| Database        | PostgreSQL                                                                            |
+| ORM             | Prisma                                                                                |
+| Authentication  | JWT + Refresh Tokens + Argon2                                                         |
+| Cache           | Redis                                                                                 |
+| Background Jobs | BullMQ                                                                                |
+| Storage         | Amazon S3 or Cloudflare R2                                                            |
+| Email           | Resend                                                                                |
+| Monitoring      | Sentry                                                                                |
+| Logging         | Pino                                                                                  |
+| Validation      | class-validator + class-transformer                                                   |
+| Deployment      | Vercel (frontend), Railway/Render/Fly.io or AWS (backend), PostgreSQL managed service |

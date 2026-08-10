@@ -1,0 +1,697 @@
+This is the error = " at scheduleUpdateOnFiber (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9036:201)
+    at forceStoreRerender (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:5011:26)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4996:109)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_1zrtmr8._.js:244:43)
+    at Set.forEach (<anonymous>)
+    at setState (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_1zrtmr8._.js:244:23)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_1zrtmr8._.js:682:13)
+    at recordAffirmationRecitation (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/src_1wxxbrj._.js:340:42)
+    at AffirmationsView.useEffect (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/src_1wxxbrj._.js:8740:33)
+    at basicStateReducer (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4797:47)
+    at updateReducerImpl (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4878:60)
+    at updateReducer (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4829:16)
+    at Object.useState (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:15492:24)
+    at exports.useState (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:1754:36)
+    at AffirmationsView (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/src_1wxxbrj._.js:8578:219)
+    at Object.react_stack_bottom_frame (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:15037:24)
+    at renderWithHooks (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4620:24)
+    at updateFunctionComponent (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6081:21)
+    at beginWork (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6691:24)
+    at runWithFiberInDEV (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at performUnitOfWork (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9555:97)
+    at workLoopSync (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9449:40)
+    at renderRootSync (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9433:13)
+    at performWorkOnRoot (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:186)
+    at performWorkOnRootViaSchedulerTask (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9036:201)
+[browser] [Error: Original file (file:///H:/Project/project 2.0/devlopment/node_modules/next/src/next-devtools/shared/console-error.ts) outside project (file:///H:/Project/project%202.0/devlopment/)
+
+Debug info:
+- Execution of project_trace_source_operation failed
+- Original file (file:///H:/Project/project 2.0/devlopment/node_modules/next/src/next-devtools/shared/console-error.ts) outside project (file:///H:/Project/project%202.0/devlopment/)] {
+  code: 'GenericFailure'
+}
+    at onClick (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:2802:1189)
+    at cJ (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:1841:162927)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:1841:168823)
+    at tA (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:1841:30648)
+    at c5 (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:1841:164160)
+    at dP (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:1841:200661)
+    at dL (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:1841:200483) (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js:2802:1189)
+ GET / 200 in 168ms (next.js: 26ms, application-code: 142ms)
+[browser] Cannot update a component (`AuthModal`) while rendering a different component (`AffirmationsView`). To locate the bad setState() call inside `AffirmationsView`, follow the stack trace as described in https://react.dev/link/setstate-in-render
+    at scheduleUpdateOnFiber (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9036:201)
+    at forceStoreRerender (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:5011:26)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4996:109)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_1zrtmr8._.js:244:43)
+    at Set.forEach (<anonymous>)
+    at setState (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_1zrtmr8._.js:244:23)
+    at <unknown> (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_1zrtmr8._.js:682:13)
+    at recordAffirmationRecitation (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/src_1wxxbrj._.js:340:42)
+    at AffirmationsView.useEffect (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/src_1wxxbrj._.js:8740:33)
+    at basicStateReducer (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4797:47)
+    at updateReducerImpl (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4878:60)
+    at updateReducer (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4829:16)
+    at Object.useState (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:15492:24)
+    at exports.useState (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:1754:36)
+    at AffirmationsView (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/src_1wxxbrj._.js:8578:219)
+    at Object.react_stack_bottom_frame (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:15037:24)
+    at renderWithHooks (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:4620:24)
+    at updateFunctionComponent (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6081:21)
+    at beginWork (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6691:24)
+    at runWithFiberInDEV (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at performUnitOfWork (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9555:97)
+    at workLoopSync (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9449:40)
+    at renderRootSync (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9433:13)
+    at performWorkOnRoot (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:186)
+    at performWorkOnRootViaSchedulerTask (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://H:/Project/project 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64) (file://H:/Project/project 2.0roject 2.0/devlopment/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9036:201)"
+
+
+
+**Instruction to follow **
+
+    You are a Senior Full-Stack Engineer, Debugging Specialist, UX Engineer, and Application Security Engineer.
+
+I already have a working website and have previously implemented the Daily Practice and Affirmations features.
+
+I now want to fix existing issues, improve the Affirmations module, add a Vision Board feature, and most importantly ensure that authentication and user-data isolation are correctly enforced throughout the application.
+
+## IMPORTANT — DO NOT START CODING IMMEDIATELY
+
+First inspect the existing project and understand:
+
+* Current authentication system
+* Database/schema
+* API/server actions
+* Affirmations implementation
+* Distraction-Free Mode
+* Auto Scroll implementation
+* Category implementation
+* Existing routing
+* Vision Board page/current design
+* Existing authorization and ownership checks
+
+Do not rewrite existing functionality unnecessarily.
+
+Do not change the application's overall design language.
+
+If you find ambiguity that materially affects implementation, STOP and ask me before making assumptions.
+
+---
+
+# 1. FIX AFFIRMATIONS — DISTRACTION-FREE MODE
+
+Inside the existing Affirmations feature there is a "Distraction-Free Mode".
+
+It contains an:
+
+"Auto Scroll"
+
+feature where the user can select a time interval in seconds.
+
+I am currently getting TWO console issues/errors when using this functionality.
+
+### Your task:
+
+1. Inspect the existing implementation.
+2. Reproduce the problem if possible.
+3. Identify the actual root cause of both console errors.
+4. Fix the root cause instead of hiding/suppressing the errors.
+5. Do not introduce a workaround that breaks existing functionality.
+6. Make sure the browser console is clean when the feature is used correctly.
+
+### Auto Scroll must support:
+
+* Auto Scroll ON/OFF.
+* User-selectable interval in seconds.
+* Start scrolling correctly.
+* Continue scrolling at the selected interval.
+* Stop immediately when Auto Scroll is turned OFF.
+* Stop/clean up timers when the user leaves Distraction-Free Mode.
+* Changing the interval should correctly update the active timer.
+* Opening/closing the page repeatedly must not create multiple timers.
+* No memory leaks.
+* No duplicate intervals.
+* No stale timers.
+* No unnecessary re-renders.
+
+If the existing implementation uses setInterval, setTimeout, requestAnimationFrame, or another mechanism, use the approach that best fits the current architecture.
+
+Do not blindly replace the existing implementation before understanding it.
+
+---
+
+# 2. AFFIRMATION CATEGORY DELETION
+
+Inside the Affirmations system, users can already create categories.
+
+Add the ability to DELETE a category.
+
+### Requirements:
+
+Users can:
+
+* Create category
+* Rename category
+* Delete category
+
+Before deleting a category, show a confirmation dialog.
+
+The confirmation should clearly warn the user that deleting the category may also remove the affirmations stored inside it.
+
+Use the existing application's design language for the confirmation UI.
+
+### Important:
+
+A user must only be able to delete categories that belong to that authenticated user.
+
+User 1 must never be able to delete User 2's category.
+
+Validate ownership on the server/database layer.
+
+Do not rely only on hiding the delete button in the frontend.
+
+---
+
+# 3. VISION BOARD
+
+There is an existing "Vision Board" page in the website.
+
+Improve/design this page so it fits naturally with the existing application.
+
+First inspect the existing design system and reuse:
+
+* Existing colors
+* Typography
+* Spacing
+* Cards
+* Buttons
+* Icons
+* Border radius
+* Shadows
+* Animations
+* Responsive behavior
+
+Do NOT redesign the entire website.
+
+The Vision Board should feel like an existing native feature of the application.
+
+## Vision Board functionality
+
+The Vision Board should allow an authenticated user to create and manage personal vision-board items.
+
+Each item should support:
+
+* Image
+* Title
+* Description/short text
+* Optional goal/category
+* Created date
+* Edit
+* Delete
+
+Users should be able to:
+
+* Add a vision-board item
+* Upload/select an image
+* Add a title
+* Add supporting text
+* Edit an existing item
+* Delete an item
+* View their items in an attractive visual board layout
+
+Use a clean card/grid-based layout appropriate for a Vision Board.
+
+Make the layout responsive for:
+
+* Desktop
+* Tablet
+* Mobile
+
+### Empty state
+
+If the user has no Vision Board items, show a useful empty state explaining how to create the first item.
+
+---
+
+# 4. MOST IMPORTANT — AUTHENTICATION
+
+Authentication and data privacy are mandatory.
+
+If a user is NOT logged in or registered:
+
+They must NOT be able to use protected functionality.
+
+Protected functionality includes, but is not limited to:
+
+### Affirmations
+
+* Add affirmation
+* Edit affirmation
+* Delete affirmation
+* Create category
+* Rename category
+* Delete category
+* Favorite affirmation
+* Today's affirmation
+* Recitation tracking
+* Voice recording/upload
+* Personal affirmation data
+
+### Vision Board
+
+* Add Vision Board item
+* Edit Vision Board item
+* Delete Vision Board item
+* Upload Vision Board image
+* Access private Vision Board data
+
+### Daily Practice
+
+Also ensure the same protection applies to personal Daily Practice data:
+
+* Tasks
+* Task completion
+* Task statistics
+* Streaks
+* Personal progress
+* Other user-specific information
+
+---
+
+# 5. AUTHENTICATION UX
+
+When an unauthenticated user attempts to access a protected feature/action:
+
+Do NOT allow the operation.
+
+Use the existing application's authentication UX where appropriate.
+
+For example:
+
+* Redirect to login
+  OR
+* Show the existing login/register prompt/modal.
+
+Do not create a completely different authentication experience.
+
+---
+
+# 6. USER DATA ISOLATION
+
+This is CRITICAL.
+
+User 1 must ONLY be able to access User 1's data.
+
+User 2 must ONLY be able to access User 2's data.
+
+This applies to:
+
+* Affirmations
+* Categories
+* Favorites
+* Today's Affirmation
+* Voice recordings
+* Recitation statistics
+* Daily Practice tasks
+* Daily Practice statistics
+* Vision Board items
+* Vision Board images/files
+* Any future private user data
+
+Example:
+
+User 1:
+
+Category:
+"Money"
+
+Affirmations:
+"I attract abundance."
+
+User 2:
+
+Category:
+"Study"
+
+Affirmations:
+"I learn quickly."
+
+User 1 must NEVER be able to see, edit, delete, or access User 2's data.
+
+---
+
+# 7. SERVER-SIDE AUTHORIZATION
+
+Do NOT implement security only in the frontend.
+
+Frontend checks are NOT sufficient.
+
+Every protected server/API/database operation must verify:
+
+1. The request is authenticated.
+2. The authenticated user's ID is available.
+3. The requested resource belongs to that authenticated user.
+4. The requested operation is authorized.
+
+This applies to:
+
+* SELECT/read
+* INSERT/create
+* UPDATE/edit
+* DELETE
+* Upload
+* Download/access
+* Search
+* Filtering
+* Analytics
+* Statistics
+* Recitation tracking
+
+Prevent:
+
+* URL manipulation
+* ID enumeration
+* Unauthorized API requests
+* Accessing another user's resource by changing an ID
+* Deleting another user's resource
+* Editing another user's resource
+* Reading another user's database records
+
+Never trust client-provided user IDs.
+
+Always derive the current user from the authenticated session/server authentication context.
+
+---
+
+# 8. DATABASE SECURITY
+
+Inspect the current database implementation.
+
+If the database supports row-level security or equivalent authorization mechanisms, use them appropriately.
+
+Every user-owned table/resource should have a reliable relationship to the authenticated user.
+
+Do not create insecure queries such as:
+
+getItem(id)
+
+without verifying ownership.
+
+Instead ensure the query effectively enforces:
+
+resource.id = requestedId
+
+AND
+
+resource.userId = authenticatedUserId
+
+Apply equivalent ownership checks to nested resources such as:
+
+User → Category → Affirmation
+
+User → Vision Board → Vision Board Item
+
+---
+
+# 9. DIRECT URL ACCESS
+
+Test direct URL manipulation.
+
+For example, if a user accesses:
+
+/affirmations/category/USER2_CATEGORY_ID
+
+while logged in as User 1:
+
+The application must NOT reveal User 2's category.
+
+Likewise, if User 1 attempts to access:
+
+/vision-board/USER2_ITEM_ID
+
+the application must reject the request.
+
+Return an appropriate unauthorized/not-found response according to the existing application's architecture.
+
+Do not leak whether another user's private resource exists.
+
+---
+
+# 10. ERROR HANDLING
+
+Do not expose sensitive database or server information to users.
+
+Handle:
+
+* Unauthorized requests
+* Forbidden requests
+* Missing resources
+* Invalid IDs
+* Database errors
+* Upload errors
+* Network errors
+
+using the existing application's error-handling patterns.
+
+---
+
+# 11. UI/UX REQUIREMENTS
+
+Do not redesign unrelated pages.
+
+Preserve the existing visual system.
+
+New/modified functionality must use the same:
+
+* Typography
+* Color system
+* Components
+* Buttons
+* Cards
+* Modal style
+* Icons
+* Spacing
+* Animations
+* Responsive behavior
+
+Also include appropriate:
+
+* Loading states
+* Empty states
+* Error states
+* Success feedback
+* Confirmation dialogs
+
+---
+
+# 12. PERFORMANCE
+
+While implementing these changes:
+
+* Avoid unnecessary database queries.
+* Avoid duplicate API calls.
+* Avoid unnecessary React/component re-renders.
+* Clean up timers/listeners when components unmount.
+* Optimize image loading where appropriate.
+* Do not load another user's data.
+* Use existing caching/state-management patterns where appropriate.
+
+---
+
+# 13. TESTING & SECURITY AUDIT
+
+After implementation, test all important flows.
+
+### Auto Scroll
+
+Test:
+
+* ON
+* OFF
+* Different intervals
+* Changing intervals
+* Leaving the page
+* Re-entering the page
+* Repeatedly opening Distraction-Free Mode
+* Console errors
+* Timer cleanup
+
+### Category
+
+Test:
+
+* Create
+* Rename
+* Delete
+* Cancel deletion
+* Delete category containing affirmations
+* Unauthorized deletion
+
+### Vision Board
+
+Test:
+
+* Create
+* Edit
+* Delete
+* Upload
+* Empty state
+* Responsive layout
+* Unauthorized access
+
+### Authentication
+
+Test as:
+
+#### Logged out user
+
+Attempt:
+
+* Add affirmation
+* Delete affirmation
+* Create category
+* Delete category
+* Add Vision Board item
+* Delete Vision Board item
+* Access protected routes
+
+All must be blocked.
+
+#### User 1
+
+Create private data.
+
+Then attempt to access User 2's resource IDs.
+
+All such requests must be rejected.
+
+#### User 2
+
+Perform the same test against User 1's data.
+
+All such requests must be rejected.
+
+---
+
+# 14. IMPLEMENTATION PROCESS
+
+Follow this order:
+
+### Phase 1 — Inspect
+
+Analyze the existing project and identify:
+
+* Relevant files
+* Components
+* Routes
+* API/server actions
+* Database tables/models
+* Authentication implementation
+* Authorization implementation
+* Auto Scroll implementation
+
+### Phase 2 — Diagnose
+
+Identify the root cause of both console errors.
+
+Explain:
+
+* What causes each error
+* Which file/component causes it
+* Why it happens
+* How you will fix it
+
+### Phase 3 — Plan
+
+Provide a concise implementation plan for:
+
+1. Auto Scroll fixes
+2. Category deletion
+3. Vision Board
+4. Authentication protection
+5. Server-side authorization
+6. User-data isolation
+7. Testing
+
+### Phase 4 — Confirm
+
+DO NOT begin implementation until I approve the plan.
+
+If something is genuinely unclear, ask me before coding.
+
+### Phase 5 — Implement
+
+After approval:
+
+* Implement carefully.
+* Reuse existing components where possible.
+* Do not unnecessarily rewrite working code.
+* Keep changes modular.
+* Preserve existing functionality.
+
+### Phase 6 — Verify
+
+After implementation:
+
+* Run/build the application.
+* Check for console errors.
+* Test authentication.
+* Test authorization.
+* Test User 1/User 2 isolation.
+* Test direct URL access.
+* Test CRUD operations.
+* Test Auto Scroll lifecycle.
+* Test Vision Board functionality.
+* Fix any regression you introduce.
+
+### Phase 7 — Final Report
+
+After successful implementation, provide:
+
+1. What was changed
+2. Root cause of both Auto Scroll errors
+3. Files/components changed
+4. Database/schema changes
+5. Authentication/security changes
+6. Vision Board functionality added
+7. Category deletion behavior
+8. Tests performed
+9. Any remaining limitations
+
+## SUCCESS CRITERIA
+
+The implementation is successful only if:
+
+✓ Both Auto Scroll console issues are actually resolved.
+
+✓ Auto Scroll works correctly for different intervals.
+
+✓ Timers are properly cleaned up.
+
+✓ Categories can be deleted securely.
+
+✓ Vision Board works as a complete authenticated feature.
+
+✓ Logged-out users cannot perform protected actions.
+
+✓ User 1 cannot access User 2's private data.
+
+✓ User 2 cannot access User 1's private data.
+
+✓ Direct URL manipulation cannot bypass authorization.
+
+✓ Server-side authorization protects every private operation.
+
+✓ Existing Daily Practice and Affirmations functionality continues working.
+
+✓ Existing website design remains consistent.
+
+✓ No new console errors are introduced.
+
+✓ The application builds/runs successfully.
+
+IMPORTANT:
+
+DO NOT start coding before completing the inspection, diagnosis, and implementation plan and receiving my approval.

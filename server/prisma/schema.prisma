@@ -1,0 +1,289 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum TaskCategory {
+  MORNING
+  AFTERNOON
+  EVENING
+}
+
+enum TaskPriority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum RepeatFrequency {
+  NONE
+  DAILY
+  WEEKDAYS
+  WEEKLY
+  MONTHLY
+  CUSTOM
+}
+
+enum VisionCategory {
+  DREAM_HOME
+  TRAVEL
+  HEALTH
+  RELATIONSHIPS
+  MONEY
+  CAREER
+  INNER_PEACE
+}
+
+model User {
+  id               String           @id @default(auto()) @map("_id") @db.ObjectId
+  email            String           @unique
+  passwordHash     String
+  firstName        String?
+  lastName         String?
+  role             Role             @default(USER)
+  isEmailVerified  Boolean          @default(false)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  profile               Profile?
+  sessions              Session[]
+  dailyTasks            DailyTask[]
+  taskCompletions       TaskCompletion[]
+  journalEntries        JournalEntry[]
+  visionBoards          VisionBoard[]
+  visionBoardItems      VisionBoardItem[]
+  userProgress          UserProgress?
+  
+  affirmationCategories AffirmationCategory[]
+  affirmations          Affirmation[]
+  affirmationAnalytics  AffirmationAnalytics?
+
+  @@map("users")
+}
+
+model Profile {
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId               String   @unique @db.ObjectId
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  primaryLocation      String?
+  atmosphereVibes      String?
+  morningDiscipline    String?
+  wealthConsciousness  String?
+  mottoQuote           String?
+  avatarUrl            String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@map("profiles")
+}
+
+model Session {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String   @db.ObjectId
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshToken String   @unique
+  userAgent    String?
+  ipAddress    String?
+  isRevoked    Boolean  @default(false)
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  @@map("sessions")
+}
+
+model DailyTask {
+  id              String          @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String          @db.ObjectId
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title           String
+  description     String?
+  category        TaskCategory    @default(MORNING)
+  priority        TaskPriority    @default(MEDIUM)
+  estimatedTime   Int?            // Time in minutes
+  dueDate         DateTime?
+  repeatFrequency RepeatFrequency @default(NONE)
+  isActive        Boolean         @default(true)
+  isPinned        Boolean         @default(false)
+  isArchived      Boolean         @default(false)
+  sortOrder       Int             @default(0)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  completions TaskCompletion[]
+
+  @@map("daily_tasks")
+}
+
+model TaskCompletion {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  taskId        String    @db.ObjectId
+  task          DailyTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  userId        String    @db.ObjectId
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  completedDate DateTime
+  createdAt     DateTime  @default(now())
+
+  @@map("task_completions")
+}
+
+model JournalEntry {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  content   String
+  prompt    String?
+  mood      String?
+  imageUrl  String?
+  tags      String[] @default([])
+  entryDate DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("journal_entries")
+}
+
+enum VisionItemType {
+  IMAGE
+  TEXT
+  GOAL
+  AFFIRMATION
+  NOTE
+  LINK
+}
+
+enum BoardLayoutMode {
+  FREEFORM
+  MASONRY
+}
+
+model VisionBoard {
+  id                 String            @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String            @db.ObjectId
+  user               User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title              String
+  subtitle           String?
+  category           VisionCategory    @default(DREAM_HOME)
+  imageUrl           String?
+  isQuoteCard        Boolean           @default(false)
+  progressPercentage Int?
+  layoutMode         BoardLayoutMode   @default(FREEFORM)
+  isFavorite         Boolean           @default(false)
+  isArchived         Boolean           @default(false)
+  sortOrder          Int               @default(0)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+
+  items              VisionBoardItem[]
+
+  @@map("vision_boards")
+}
+
+model VisionBoardItem {
+  id            String         @id @default(auto()) @map("_id") @db.ObjectId
+  boardId       String         @db.ObjectId
+  board         VisionBoard    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  userId        String         @db.ObjectId
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  itemType      VisionItemType @default(IMAGE)
+  title         String?
+  content       String?
+  imageUrl      String?
+  linkUrl       String?
+  
+  goalTarget    Float?
+  goalProgress  Float?
+  targetDate    DateTime?
+  
+  affirmationId String?
+  
+  posX          Float          @default(0)
+  posY          Float          @default(0)
+  width         Float          @default(300)
+  height        Float          @default(220)
+  zIndex        Int            @default(1)
+  bgColor       String?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  @@map("vision_board_items")
+}
+
+model UserProgress {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String   @unique @db.ObjectId
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clarityScore       Int      @default(75)
+  totalReflections   Int      @default(0)
+  unlockedMilestones String[] @default([])
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("user_progress")
+}
+
+// -----------------------------------------------------------------------------
+// FEATURE 2: AFFIRMATIONS SYSTEM
+// -----------------------------------------------------------------------------
+
+model AffirmationCategory {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String        @db.ObjectId
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name         String
+  sortOrder    Int           @default(0)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  affirmations Affirmation[]
+
+  @@map("affirmation_categories")
+}
+
+model Affirmation {
+  id              String              @id @default(auto()) @map("_id") @db.ObjectId
+  categoryId      String              @db.ObjectId
+  category        AffirmationCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  userId          String              @db.ObjectId
+  user            User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  text            String
+  isFavorite      Boolean             @default(false)
+  isTodayFeatured Boolean             @default(false)
+  tags            String[]            @default([])
+  audioUrl        String?             // URL to uploaded voice recording
+  
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  @@map("affirmations")
+}
+
+model AffirmationAnalytics {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String   @unique @db.ObjectId
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  totalRecitations   Int      @default(0)
+  dailyRecitations   Int      @default(0)
+  weeklyRecitations  Int      @default(0)
+  longestStreak      Int      @default(0)
+  currentStreak      Int      @default(0)
+  lastRecitationDate DateTime?
+  
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("affirmation_analytics")
+}
